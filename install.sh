@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc .bash_profile .gitconfig .gitignore .git-completion.bash"    # list of files/folders to symlink in homedir
+files=".bashrc .bash_profile .gitconfig .gitignore .git-completion.bash .oh-my-zsh .zshrc"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -31,7 +31,7 @@ for file in $files; do
 done
 
 change_shell () {
-    chsh -s /bin/bash
+    chsh -s /bin/zsh
 }
 
 change_shell
