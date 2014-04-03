@@ -76,3 +76,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+
+# Preserves current directory when creating a new tab
+precmd () {print -Pn "\e]2; %~/ \a"}
+preexec () {print -Pn "\e]2; %~/ \a"}
