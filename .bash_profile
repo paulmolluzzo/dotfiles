@@ -103,3 +103,24 @@ else \
   # @2 - Prompt when not in GIT repo
   echo " \$ "; \
 fi)'
+
+# git aliases
+
+alias gd='git diff'
+alias gcmsg='git commit -m'
+alias gcamsg='git commit -am'
+alias gp='git push'
+alias gl='git pull'
+alias gs='git status'
+alias glg='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset" --abbrev-commit'
+alias ga='git add'
+alias gm='git merge'
+alias grh='git reset HEAD'
+alias grhh='git reset HEAD --hard'
+alias gsta='git stash'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gstd='git stash drop'
+alias ggo='git checkout -B'
+alias gco='git checkout'
+
