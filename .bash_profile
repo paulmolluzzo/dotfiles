@@ -97,11 +97,11 @@ if [ $? -eq 0 ]; then \
     echo "'$Green'"$(__git_ps1 " (%s)")'$Color_Off'; \
   else \
     # @5 - Changes to working tree
-    echo "'$IRed'"$(__git_ps1 " {%s}")'$Color_Off'; \
-  fi) \$ "; \
+    echo "'$IRed'"$(__git_ps1 " (%s)")'$Color_Off'; \
+  fi) '$White'\$'$Color_Off' "; \
 else \
   # @2 - Prompt when not in GIT repo
-  echo " \$ "; \
+  echo "'$White' \$ '$Color_Off'"; \
 fi)'
 
 # git aliases
