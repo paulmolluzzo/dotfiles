@@ -106,12 +106,14 @@ fi)'
 
 # git aliases
 
+alias gba='git branch -a'
 alias gd='git diff'
 alias gcmsg='git commit -m'
 alias gcamsg='git commit -am'
 alias gp='git push'
 alias gl='git pull'
 alias gs='git status'
+alias gss='git status -s'
 alias glg='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset" --abbrev-commit'
 alias ga='git add'
 alias gm='git merge'
@@ -123,4 +125,5 @@ alias gstp='git stash pop'
 alias gstd='git stash drop'
 alias ggo='git checkout -B'
 alias gco='git checkout'
+alias gcom='git checkout master'
 
