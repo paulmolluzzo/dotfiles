@@ -126,5 +126,6 @@ alias gstp='git stash pop'
 alias gstd='git stash drop'
 alias ggo='git checkout -B'
 alias gco='git checkout'
+alias gcob='git checkout -b'
 alias gcom='git checkout master'
 
