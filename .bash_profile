@@ -2,9 +2,6 @@
 source ~/.git-completion.bash
 source ~/.profile
 
-[[ $- = *i* ]] && bind TAB:menu-complete
-set completion-ignore-case On
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 # MacPorts Installer addition on 2012-09-20_at_11:02:19: adding an appropriate PATH variable for use with MacPorts.
@@ -132,3 +129,6 @@ alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gcom='git checkout master'
 
+# tab completion
+[[ $- = *i* ]] && bind TAB:menu-complete
+set completion-ignore-case On
