@@ -128,6 +128,8 @@ alias ggo='git checkout -B'
 alias gco='git checkout'
 alias gcof='git checkout -- ' #Used to checkout a single file
 alias gcom='git checkout master'
+alias gcl='git clone'
+alias gf='git fetch'
 
 # tab completion
 [[ $- = *i* ]] && bind TAB:menu-complete
