@@ -134,3 +134,6 @@ alias gf='git fetch'
 # tab completion
 [[ $- = *i* ]] && bind TAB:menu-complete
 set completion-ignore-case On
+
+# Random Aliases
+alias skm='cd Documents/illuminati/0085_skm/Skinny-Mom/public/wp-content/themes/skinny/'
