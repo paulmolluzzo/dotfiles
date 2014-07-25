@@ -188,7 +188,7 @@ function svn
     do
       if   [[ $RL =~ ^\ ?M ]]; then C="\033[34m";
       elif [[ $RL =~ ^\ ?C ]]; then C="\033[41m\033[37m\033[1m";
-      elif [[ $RL =~ ^A ]]; then C="\033[32m\033[1m";
+      elif [[ $RL =~ ^A ]]; then C="\033[32m\136[1m";
       elif [[ $RL =~ ^D ]]; then C="\033[31m\033[1m";
       elif [[ $RL =~ ^X ]]; then C="\033[37m";
       elif [[ $RL =~ ^! ]]; then C="\033[43m\033[37m\033[1m";
