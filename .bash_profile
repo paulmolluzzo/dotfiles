@@ -145,7 +145,7 @@ alias slogme="svn log -l20 | sed -n '/molluzzo/,/-----$/ p'"
 set completion-ignore-case On
 
 # Random Aliases
-alias skm='cd Documents/illuminati/0085_skm/Skinny-Mom/public/wp-content/themes/skinny/'
+
 
 function svn
 {
