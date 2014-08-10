@@ -2791,6 +2791,8 @@ complete -o bashdefault -o default -o nospace -F _gitk gitk 2>/dev/null \
 || complete -o default -o nospace -F _gitk gitk
 complete -o bashdefault -o default -o nospace -F _git_checkout gco 2>/dev/null \
 || complete -o default -o nospace -F _git_checkout gco
+complete -o bashdefault -o default -o nospace -F _git_merge gm 2>/dev/null \
+|| complete -o default -o nospace -F _git_checkout gm
 
 # The following are necessary only for Cygwin, and only are needed
 # when the user has tab-completed the executable name and consequently
