@@ -141,9 +141,16 @@ alias sm='svn merge'
 alias scmsg='svn commit -m'
 alias slog='svn log -l'
 
-# better personal svn logging
+# even better personal svn logging
 function slogme() {
-  svn log -l$@ | sed -n '/molluzzo/,/-----$/ p'
+  # use number or 20 by default
+  commits=${1-20}
+
+  # use the second argument to search for a user or my name if not supplied
+  user=${2-molluzzo}
+
+  # run it
+  svn log -l$commits | sed -n '/'$user'/,/-----$/ p'
 }
 
 # tab completion
