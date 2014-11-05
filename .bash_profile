@@ -140,7 +140,11 @@ alias sd='svn di'
 alias sm='svn merge'
 alias scmsg='svn commit -m'
 alias slog='svn log -l'
-alias slogme="svn log -l20 | sed -n '/molluzzo/,/-----$/ p'"
+
+# better personal svn logging
+function slogme() {
+  svn log -l$@ | sed -n '/molluzzo/,/-----$/ p'
+}
 
 # tab completion
 [[ $- = *i* ]] && bind TAB:menu-complete
