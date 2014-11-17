@@ -6,9 +6,10 @@
 
 ########## Variables
 
+today=`date +%Y-%m-%d`
 dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc .bash_profile .gitconfig .gitignore .git-completion.bash .inputrc .profile"    # list of files/folders to symlink in homedir
+olddir=~/dotfiles-old-$today             # old dotfiles backup directory
+files=".bashrc .bash_profile .gitconfig .gitignore .git-completion.bash .hushlogin .inputrc .profile"    # list of files/folders to symlink in homedir
 
 ##########
 
