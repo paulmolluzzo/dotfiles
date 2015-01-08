@@ -143,6 +143,10 @@ alias sm='svn merge'
 alias scmsg='svn commit -m'
 alias slog='svn log -l'
 
+# random aliases
+
+alias duh='du -h -d 1'
+
 # even better personal svn logging
 function slogme() {
   # use number or 20 by default
