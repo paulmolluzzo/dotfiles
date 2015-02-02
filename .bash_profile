@@ -133,6 +133,19 @@ alias gcom='git checkout master'
 alias gcl='git clone'
 alias gf='git fetch'
 
+# git branch ahead/behind another
+function gahead() {
+  # use first argument or master
+  original=${1-master}
+
+  # use the second argument or current branch if not given
+  current=`git branch | grep \* | sed s/\*\ //`
+  compare=${2-$current}
+
+  # run it
+  git rev-list --left-right --count $original...$compare
+}
+
 # svn aliases
 
 alias sst='svn status'
