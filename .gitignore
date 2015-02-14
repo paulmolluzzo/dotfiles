@@ -9,3 +9,4 @@ doc/
 .DS_Store.DS_Store
 .DS_Store
 .gitconfig.private
+.vim/bundle/ctrlp.vim

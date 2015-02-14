@@ -4,6 +4,11 @@ source ~/.profile
 
 export PATH=/usr/local/bin:$PATH
 
+# Add path for MAMP version of php
+export MAMP_PHP="/Applications/MAMP/bin/php/php5.3.27/bin/"
+
+export PATH="$MAMP_PHP:$PATH"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
 # MacPorts Installer addition on 2012-09-20_at_11:02:19: adding an appropriate PATH variable for use with MacPorts.
@@ -132,6 +137,19 @@ alias gcof='git checkout -- ' #Used to checkout a single file
 alias gcom='git checkout master'
 alias gcl='git clone'
 alias gf='git fetch'
+
+# git branch ahead/behind another
+function gahead() {
+  # use first argument or master
+  original=${1-master}
+
+  # use the second argument or current branch if not given
+  current=`git branch | grep \* | sed s/\*\ //`
+  compare=${2-$current}
+
+  # run it
+  git rev-list --left-right --count $original...$compare
+}
 
 # svn aliases
 
