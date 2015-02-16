@@ -5,7 +5,7 @@ source ~/.profile
 export PATH=/usr/local/bin:$PATH
 
 # Add path for MAMP version of php
-export MAMP_PHP="/Applications/MAMP/bin/php/php5.3.27/bin/"
+export MAMP_PHP="/Applications/MAMP/bin/php/php5.3.27/bin"
 
 export PATH="$MAMP_PHP:$PATH"
 
