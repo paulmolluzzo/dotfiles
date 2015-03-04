@@ -9,7 +9,7 @@
 today=`date +%Y-%m-%d`
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles-old-$today             # old dotfiles backup directory
-files=".bashrc .bash_profile .gitconfig .gitignore .git-completion.bash .hushlogin .inputrc .profile .vim .vimrc"    # list of files/folders to symlink in homedir
+files=".bashrc .bash_profile .gitconfig .gitignore .git-completion.bash .hushlogin .inputrc .profile .vim .vimrc .tmux.conf"    # list of files/folders to symlink in homedir
 
 ##########
 

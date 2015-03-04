@@ -161,6 +161,14 @@ alias sm='svn merge'
 alias scmsg='svn commit -m'
 alias slog='svn log -l'
 
+# tmux aliases
+
+alias tmn='tmux new -s'
+alias tma='tmux attach -t'
+alias tml='tmux ls'
+alias tmk='tmux kill-session -t'
+alias tmka='killall tmux'
+
 # random aliases
 
 alias duh='du -h -d 1'
