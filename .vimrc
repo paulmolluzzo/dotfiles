@@ -1,3 +1,6 @@
+" Turn on Filetype
+filetype plugin on
+
 " add Ctrl P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -13,7 +16,11 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^^'
 let g:gitgutter_sign_modified_removed = '~-'
 
-highlight clear SignColumn
+call gitgutter#highlight#define_highlights()
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChangeDelete ctermfg=yellow
 
 " airline options
 let g:airline_powerline_fonts = 1
