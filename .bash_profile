@@ -17,6 +17,81 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # Colors as variables
 
+#For the Prompt:
+# Reset
+Prompt_Color_Off="\[\033[0m\]"       # Text Reset
+
+# Regular Colors
+Prompt_Black="\[\033[0;30m\]"        # Black
+Prompt_Red="\[\033[0;31m\]"          # Red
+Prompt_Green="\[\033[0;32m\]"        # Green
+Prompt_Yellow="\[\033[0;33m\]"       # Yellow
+Prompt_Blue="\[\033[0;34m\]"         # Blue
+Prompt_Purple="\[\033[0;35m\]"       # Purple
+Prompt_Cyan="\[\033[0;36m\]"         # Cyan
+Prompt_White="\[\033[0;37m\]"        # White
+
+# Bold
+Prompt_BBlack="\[\033[1;30m\]"       # Black
+Prompt_BRed="\[\033[1;31m\]"         # Red
+Prompt_BGreen="\[\033[1;32m\]"       # Green
+Prompt_BYellow="\[\033[1;33m\]"      # Yellow
+Prompt_BBlue="\[\033[1;34m\]"        # Blue
+Prompt_BPurple="\[\033[1;35m\]"      # Purple
+Prompt_BCyan="\[\033[1;36m\]"        # Cyan
+Prompt_BWhite="\[\033[1;37m\]"       # White
+
+# Underline
+Prompt_UBlack="\[\033[4;30m\]"       # Black
+Prompt_URed="\[\033[4;31m\]"         # Red
+Prompt_UGreen="\[\033[4;32m\]"       # Green
+Prompt_UYellow="\[\033[4;33m\]"      # Yellow
+Prompt_UBlue="\[\033[4;34m\]"        # Blue
+Prompt_UPurple="\[\033[4;35m\]"      # Purple
+Prompt_UCyan="\[\033[4;36m\]"        # Cyan
+Prompt_UWhite="\[\033[4;37m\]"       # White
+
+# Background
+Prompt_On_Black="\[\033[40m\]"       # Black
+Prompt_On_Red="\[\033[41m\]"         # Red
+Prompt_On_Green="\[\033[42m\]"       # Green
+Prompt_On_Yellow="\[\033[43m\]"      # Yellow
+Prompt_On_Blue="\[\033[44m\]"        # Blue
+Prompt_On_Purple="\[\033[45m\]"      # Purple
+Prompt_On_Cyan="\[\033[46m\]"        # Cyan
+Prompt_On_White="\[\033[47m\]"       # White
+
+# High Intensty
+Prompt_IBlack="\[\033[0;90m\]"       # Black
+Prompt_IRed="\[\033[0;91m\]"         # Red
+Prompt_IGreen="\[\033[0;92m\]"       # Green
+Prompt_IYellow="\[\033[0;93m\]"      # Yellow
+Prompt_IBlue="\[\033[0;94m\]"        # Blue
+Prompt_IPurple="\[\033[0;95m\]"      # Purple
+Prompt_ICyan="\[\033[0;96m\]"        # Cyan
+Prompt_IWhite="\[\033[0;97m\]"       # White
+
+# Bold High Intensty
+Prompt_BIBlack="\[\033[1;90m\]"      # Black
+Prompt_BIRed="\[\033[1;91m\]"        # Red
+Prompt_BIGreen="\[\033[1;92m\]"      # Green
+Prompt_BIYellow="\[\033[1;93m\]"     # Yellow
+Prompt_BIBlue="\[\033[1;94m\]"       # Blue
+Prompt_BIPurple="\[\033[1;95m\]"     # Purple
+Prompt_BICyan="\[\033[1;96m\]"       # Cyan
+Prompt_BIWhite="\[\033[1;97m\]"      # White
+
+# High Intensty backgrounds
+Prompt_On_IBlack="\[\033[0;100m\]"   # Black
+Prompt_On_IRed="\[\033[0;101m\]"     # Red
+Prompt_On_IGreen="\[\033[0;102m\]"   # Green
+Prompt_On_IYellow="\[\033[0;103m\]"  # Yellow
+Prompt_On_IBlue="\[\033[0;104m\]"    # Blue
+Prompt_On_IPurple="\[\033[10;95m\]"  # Purple
+Prompt_On_ICyan="\[\033[0;106m\]"    # Cyan
+Prompt_On_IWhite="\[\033[0;107m\]"   # White
+
+# For non-prompt use
 # Reset
 Color_Off="\033[0m"       # Text Reset
 
@@ -96,19 +171,19 @@ PathShort="\w"
 
 # Custom prompt
 
-export PS1=$IBlue'{'$Time12h'}'$Color_Off$BYellow' ['$PathShort']'$Color_Off'$(git branch &>/dev/null;\
+export PS1=$Prompt_IBlue'{'$Time12h'}'$Prompt_Color_Off$Prompt_BYellow' ['$PathShort']'$Prompt_Color_Off'$(git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
     # @4 - Clean repository - nothing to commit
-    echo "'$Green'"$(__git_ps1 " (%s)")'$Color_Off'; \
+    echo "'$Prompt_Green'"$(__git_ps1 " (%s)")'$Prompt_Color_Off'; \
   else \
     # @5 - Changes to working tree
-    echo "'$IRed'"$(__git_ps1 " (%s)")'$Color_Off'; \
-  fi) '$White'\$'$Color_Off' "; \
+    echo "'$Prompt_IRed'"$(__git_ps1 " (%s)")'$Prompt_Color_Off'; \
+  fi) '$Prompt_White'\$'$Prompt_Color_Off' "; \
 else \
   # @2 - Prompt when not in GIT repo
-  echo "'$White' \$ '$Color_Off'"; \
+  echo "'$Prompt_White' \$ '$Prompt_Color_Off'"; \
 fi)'
 
 # git aliases
