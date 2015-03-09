@@ -147,8 +147,13 @@ function gahead() {
   current=`git branch | grep \* | sed s/\*\ //`
   compare=${2-$current}
 
-  # run it
-  git rev-list --left-right --count $original...$compare
+  # run git rev-list and capture numbers returned
+  result=`git rev-list --left-right --count $original...$compare`
+
+  # print numbers in a pretty message
+  numbers=($result);
+  echo -e "$Red-$Color_Off $compare is currently $IRed${numbers[0]} $Color_Off commits behind $original";
+  echo -e "$Green+$Color_Off $compare is currently $IGreen${numbers[1]} $Color_Off commits ahead of $original";
 }
 
 # svn aliases
