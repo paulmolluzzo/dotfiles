@@ -189,6 +189,8 @@ fi)'
 # git aliases
 
 alias gba='git branch -a'
+alias gbd='git branch -d'
+alias gbvv='git branch -vv'
 alias gd='git diff'
 alias gcmsg='git commit -m'
 alias gcamsg='git commit -am'
