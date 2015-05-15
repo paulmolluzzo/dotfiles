@@ -62,6 +62,14 @@ set visualbell
 set autoread
 set showmode
 set backspace=2
+set autoread
+set autowrite
+set nobackup
+set noswapfile
+set undolevels=1000
+set hidden
+set noshowmode
+set ttimeoutlen=50
 
 syntax on
 
