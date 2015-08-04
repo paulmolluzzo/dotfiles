@@ -1,11 +1,17 @@
+set nocompatible
+
 " Turn on Filetype
 filetype plugin on
+
+let mapleader = "\<Space>"
 
 " add Ctrl P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Pathogen support
 execute pathogen#infect()
+
+" GitGutter settings
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_realtime = 750
 let g:gitgutter_eager = 750
@@ -53,7 +59,8 @@ colorscheme lucario
 set encoding=utf-8
 set laststatus=2
 set noshowmode
-set ttimeoutlen=50
+set timeoutlen=1000
+set ttimeoutlen=0
 set updatetime=750
 set number
 set history=1000
@@ -69,7 +76,17 @@ set noswapfile
 set undolevels=1000
 set hidden
 set noshowmode
-set ttimeoutlen=50
+autocmd BufLeave,FocusLost * silent! wall
+noremap <Leader>s :update<CR>
+noremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+map q: :q
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+noremap <Leader>w :bd<CR>
 
 syntax on
 
