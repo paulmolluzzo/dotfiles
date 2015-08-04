@@ -2,6 +2,11 @@
 source ~/.git-completion.bash
 source ~/.profile
 
+export EDITOR='subl'
+
+# Completion for tmuxinator
+source ~/.bin/tmuxinator.bash
+
 export PATH=/usr/local/bin:$PATH
 
 # Add path for MAMP version of php
@@ -192,6 +197,7 @@ alias gba='git branch -a'
 alias gbd='git branch -d'
 alias gbvv='git branch -vv'
 alias gd='git diff'
+alias gdno="git diff --name-only"
 alias gcmsg='git commit -m'
 alias gcamsg='git commit -am'
 alias gp='git push'
@@ -254,6 +260,7 @@ alias tmka='killall tmux'
 # random aliases
 
 alias duh='du -h -d 1'
+alias cacheout='rm -rf protected/runtime/cache/ && rm -rf protected/runtime/db/'
 
 # even better personal svn logging
 function slogme() {
