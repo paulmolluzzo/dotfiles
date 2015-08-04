@@ -54,6 +54,13 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
   nmap <leader>8 <Plug>AirlineSelectTab8
   nmap <leader>9 <Plug>AirlineSelectTab9
 
+" UtilSnips config
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:AutoClosePreserveDotReg = 0
+
 " Basic Visual and Editing Stuff
 colorscheme lucario
 set encoding=utf-8
