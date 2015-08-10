@@ -239,6 +239,21 @@ function gahead() {
   echo -e "$Green+$Color_Off $compare is currently $IGreen${numbers[1]}$Color_Off commits ahead of $original";
 }
 
+# get ticket numbers only in a current branch
+
+function gtix() {
+  # use first argument or master
+  original=${1-master}
+
+  # use the second argument or current branch if not given
+  current=`git branch | grep \* | sed s/\*\ //`
+  compare=${2-$current}
+
+  # run git rev-list and capture numbers returned
+  git log $original..$compare | grep -o "#[0-9]\{4\}" | uniq | sort
+
+}
+
 # svn aliases
 
 alias sst='svn status'
