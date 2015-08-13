@@ -249,9 +249,8 @@ function gtix() {
   current=`git branch | grep \* | sed s/\*\ //`
   compare=${2-$current}
 
-  # run git rev-list and capture numbers returned
-  git log $original..$compare | grep -o "#[0-9]\{4\}" | uniq | sort
-
+  # run git log comparing the first/master to the second/current, grep for a pattern like #1234, sort, remove duplicates
+  git log $original..$compare | grep -o "#[0-9]\{4\}" | sort | uniq
 }
 
 # svn aliases
