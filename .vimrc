@@ -94,6 +94,7 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 noremap <Leader>w :bd<CR>
+set clipboard=unnamed
 
 syntax on
 
@@ -113,6 +114,8 @@ set list listchars=tab:▸\ ,trail:·,eol:¬
 
 set nowrap
 set linebreak
+
+noremap <Leader>nw :set wrap!<CR>
 
 " Scrolling
 
