@@ -20,6 +20,14 @@ export PATH="$MAMP_PHP:$PATH"
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+# history settings
+
+shopt -s histappend
+
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 # Colors as variables
 
 #For the Prompt:
@@ -250,7 +258,7 @@ function gtix() {
   compare=${2-$current}
 
   # run git log comparing the first/master to the second/current, grep for a pattern like #1234, sort, remove duplicates
-  git log $original..$compare | grep -o "#[0-9]\{4\}" | sort | uniq
+  git log $original..$compare | grep -o "\(\#[0-9]\{4\}\)\|\([0-9]\{4\}\:\)\|\(\s\{4\}[0-9]\{4\}\)" | sort | uniq
 }
 
 # svn aliases
