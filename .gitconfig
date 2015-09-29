@@ -31,7 +31,13 @@
 [core]
     editor = vim 
     excludesfile = ~/.gitignore
+    pager = bash -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
 [credential]
     helper = osxkeychain
 [push]
     default = simple
+[color "diff-highlight"]
+    oldNormal = "red bold"
+    oldHighlight = "red bold 52"
+    newNormal = "green bold"
+    newHighlight = "green bold 22"

@@ -228,6 +228,7 @@ alias gcof='git checkout -- ' #Used to checkout a single file
 alias gcom='git checkout master'
 alias gcl='git clone'
 alias gf='git fetch'
+alias gdhl='git diff -p --color | ~/.bin/diff-highlight | strip_diff_leading_symbols | less -r'
 
 # git branch ahead/behind another
 function gahead() {
@@ -259,6 +260,31 @@ function gtix() {
 
   # run git log comparing the first/master to the second/current, grep for a pattern like #1234, sort, remove duplicates
   git log $original..$compare | grep -o "\(\#[0-9]\{4\}\)\|\([0-9]\{4\}\:\)\|\(\s\{4\}[0-9]\{4\}\)" | sort | uniq
+}
+
+
+function strip_diff_leading_symbols(){
+    color_code_regex=$'(\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K])'
+
+    # remove the diff --git line
+    sed -E "s/^($color_code_regex)diff --git .*$/`printf "$IBlue"`/g" | \
+
+    # replace the index line with a horizontal line
+    sed -E "s/^($color_code_regex)index .*$/\1$(rule)`printf "$Red"`/g" | \
+
+    # put a line after the file lists
+    sed -E "s/^($color_code_regex)\+\+\+(.*)$/`printf "$Green"`\1 \+\+\5/g" | \
+
+    # replace the @@ stuff with a line after the file lists
+    sed -E "s/^($color_code_regex)\@.*$/`printf "$IBlue"`$(rule)`printf "$Color_Off"`/g" | \
+
+    # actually strips the leading symbols
+    sed -E "s/^($color_code_regex)[\+\-]/\1 /g"
+}
+
+## Print a horizontal rule
+rule () {
+  printf "%$(tput cols)s\n"|tr " " "─"
 }
 
 # svn aliases
