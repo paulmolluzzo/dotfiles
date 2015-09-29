@@ -10,9 +10,11 @@ source ~/.bin/tmuxinator.bash
 export PATH=/usr/local/bin:$PATH
 
 # Add path for MAMP version of php
-export MAMP_PHP="/Applications/MAMP/bin/php/php5.3.27/bin"
+export MAMP_PHP="/Applications/MAMP/bin/php/php5.5.3/bin"
+export MAMP_MYSQL="/Applications/MAMP/Library/bin"
 
 export PATH="$MAMP_PHP:$PATH"
+export PATH="$MAMP_MYSQL:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
 
@@ -262,7 +264,7 @@ function gtix() {
   git log $original..$compare | grep -o "\(\#[0-9]\{4\}\)\|\([0-9]\{4\}\:\)\|\(\s\{4\}[0-9]\{4\}\)" | sort | uniq
 }
 
-
+# strip functionality for pretty git diff
 function strip_diff_leading_symbols(){
     color_code_regex=$'(\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K])'
 
@@ -282,7 +284,7 @@ function strip_diff_leading_symbols(){
     sed -E "s/^($color_code_regex)[\+\-]/\1 /g"
 }
 
-## Print a horizontal rule
+# Print a horizontal rule
 rule () {
   printf "%$(tput cols)s\n"|tr " " "─"
 }
@@ -307,8 +309,23 @@ alias tmka='killall tmux'
 
 # random aliases
 
+alias o='open'
 alias duh='du -h -d 1'
-alias cacheout='rm -rf protected/runtime/cache/ && rm -rf protected/runtime/db/'
+
+# make a directory and go into it
+function md() {
+  mkdir -p "$@" && cd "$@"
+}
+
+# quick find what's allowed
+function f() {
+    find . -name "$1" 2>&1 | grep -v 'Permission denied'
+}
+
+# cd into front finder window
+cdf() {
+  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
 
 # even better personal svn logging
 function slogme() {
@@ -326,9 +343,7 @@ function slogme() {
 [[ $- = *i* ]] && bind TAB:menu-complete
 set completion-ignore-case On
 
-# Random Aliases
-
-
+# svn stuff
 function svn
 {
   # rebuild args to get quotes right
