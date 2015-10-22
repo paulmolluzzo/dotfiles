@@ -292,11 +292,6 @@ rule () {
         printf "%$(tput cols)s\n"|tr " " "─"
 }
 
-# Print a horizontal rule
-rule () {
-  printf "%$(tput cols)s\n"|tr " " "─"
-}
-
 # svn aliases
 
 alias sst='svn status'
