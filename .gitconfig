@@ -31,7 +31,6 @@
 [core]
     editor = vim 
     excludesfile = ~/.gitignore
-    pager = bash -lc 'diff-highlight | strip_diff_leading_symbols | less -r' -
 [credential]
     helper = osxkeychain
 [push]

@@ -230,7 +230,6 @@ alias gcof='git checkout -- ' #Used to checkout a single file
 alias gcom='git checkout master'
 alias gcl='git clone'
 alias gf='git fetch'
-alias gdhl='git diff -p --color | ~/.bin/diff-highlight | strip_diff_leading_symbols | less -r'
 
 # git branch ahead/behind another
 function gahead() {
@@ -264,24 +263,33 @@ function gtix() {
   git log $original..$compare | grep -o "\(\#[0-9]\{4\}\)\|\([0-9]\{4\}\:\)\|\(\s\{4\}[0-9]\{4\}\)" | sort | uniq
 }
 
+# git diff highlight
+function gdhl() {
+  git diff -p --color $1 | ~/.bin/diff-highlight | strip_diff_leading_symbols | less -r
+}
+
 # strip functionality for pretty git diff
+# Breaks with non-English language characters
 function strip_diff_leading_symbols(){
     color_code_regex=$'(\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K])'
 
-    # remove the diff --git line
-    sed -E "s/^($color_code_regex)diff --git .*$/`printf "$IBlue"`/g" | \
+        # simplify the unified patch diff header
+        sed -E "s/^($color_code_regex)diff --git .*$//g" | \
+               sed -E "s/^($color_code_regex)index .*$/\
+\1`printf "$IBlue"`$(rule)`printf "$IRed"`/g" | \
+               sed -E "s/^($color_code_regex)\+\+\+(.*)$/`printf "$IGreen"`\1 \+\+\5\\
+\1`printf "$IBlue"`$(rule)`printf "$Color_Off"`/g" | \
 
-    # replace the index line with a horizontal line
-    sed -E "s/^($color_code_regex)index .*$/\1$(rule)`printf "$Red"`/g" | \
+        # extra color for @@ context line
+              sed -E "s/@@(.*$)/`printf "$IPurple"`@@\1`printf "$Color_Off"`/g" | \
 
-    # put a line after the file lists
-    sed -E "s/^($color_code_regex)\+\+\+(.*)$/`printf "$Green"`\1 \+\+\5/g" | \
+        # actually strips the leading symbols
+               sed -E "s/^($color_code_regex)[\+\-]/\1 /g"
+}
 
-    # replace the @@ stuff with a line after the file lists
-    sed -E "s/^($color_code_regex)\@.*$/`printf "$IBlue"`$(rule)`printf "$Color_Off"`/g" | \
-
-    # actually strips the leading symbols
-    sed -E "s/^($color_code_regex)[\+\-]/\1 /g"
+## Print a horizontal rule
+rule () {
+        printf "%$(tput cols)s\n"|tr " " "─"
 }
 
 # Print a horizontal rule
