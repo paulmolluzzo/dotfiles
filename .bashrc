@@ -53,3 +53,9 @@ source ${HOME}/dotfiles/aliases/tmux.sh
 ################################
 
 source ${HOME}/dotfiles/aliases/random.sh
+
+################################
+############## sf ##############
+################################
+
+source ${HOME}/dotfiles/aliases/sf.sh
