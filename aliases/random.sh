@@ -61,13 +61,18 @@ lma() {
                 echo -e "  $IPurple${NAME}$Color_Off -" "${DOCLINE##\# }"
             fi
         done
+        echo -e ""
     fi
 }
 
 # FOR LMA FN. Echo the description of a desk. $1 is the deskfile.
 echo_description() {
     local descline=$(grep -E "#\s+Description" "$1")
-    echo "${descline##*Description: }"
+    if [ -n "$descline" ]; then
+        echo -e "\n$UBlue${descline##*Description: }:$Color_Off"
+    else
+        echo -e "\n$UBlue$1:$Color_Off"
+    fi
 }
 
 # FOR LMA FN. Return a list of aliases and functions for a given desk
