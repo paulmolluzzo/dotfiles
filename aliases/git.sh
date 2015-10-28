@@ -8,39 +8,66 @@ source ${HOME}/.profile
 ######### Aliases ##############
 ################################
 
+# list all branches
 alias gba='git branch -a'
+# delete branch
 alias gbd='git branch -d'
+# verbose branch list
 alias gbvv='git branch -vv'
+# git diff
 alias gd='git diff'
+# git diff name only
 alias gdno="git diff --name-only"
+# git commit with message
 alias gcmsg='git commit -m'
+# git commit all with message
 alias gcamsg='git commit -am'
+# git push
 alias gp='git push'
+# git push set upstream origin
 alias gpsuo='git push --set-upstream origin'
+# git pull
 alias gl='git pull'
+# git status
 alias gs='git status'
+# git status short
 alias gss='git status -s'
+# git pretty one line log
 alias glg='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset" --abbrev-commit'
+# git add
 alias ga='git add'
+# git merge
 alias gm='git merge'
+# git reset HEAD
 alias grh='git reset HEAD'
+# git reset HEAD hard
 alias grhh='git reset HEAD --hard'
+# git stash
 alias gsta='git stash'
+# git stash list
 alias gstl='git stash list'
+# git stash pop
 alias gstp='git stash pop'
+# git stash drop
 alias gstd='git stash drop'
+# git create new branch and check it out
 alias ggo='git checkout -B'
+# git checkout branch
 alias gco='git checkout'
-alias gcof='git checkout -- ' #Used to checkout a single file
+# Checkout a single file
+alias gcof='git checkout -- '
+# git checkout master
 alias gcom='git checkout master'
+# git clone
 alias gcl='git clone'
+# git fetch
 alias gf='git fetch'
 
 ################################
 ######### Functions ############
 ################################
 
-# git branch ahead/behind another
+# git branch ahead/behind another: gahead $left $right
 function gahead() {
   # use first argument or master
   original=${1-master}
@@ -72,14 +99,14 @@ function gahead() {
 #   git log $original..$compare | grep -o "\(\#[0-9]\{4\}\)\|\([0-9]\{4\}\:\)\|\(\s\{4\}[0-9]\{4\}\)" | sort | uniq
 # }
 
-# git diff highlight
-function gdhl() {
+# prettier git diff highlight
+gdhl() {
   git diff -p --color $1 | ~/.bin/diff-highlight | strip_diff_leading_symbols | less -r
 }
 
 # strip functionality for pretty git diff
 # Breaks with non-English language characters
-function strip_diff_leading_symbols(){
+strip_diff_leading_symbols(){
     color_code_regex=$'(\x1B\\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K])'
 
         # simplify the unified patch diff header
@@ -97,7 +124,7 @@ function strip_diff_leading_symbols(){
 }
 
 # git file size diff from http://stackoverflow.com/questions/10845051/git-show-total-file-size-difference-between-two-commits
-# use like gfsd old_version_sha_..new_version_sha # outputs difference in size of files since old_version_sha
+# git file size diff use like: gfsd old_version_sha_..new_version_sha
 gfsd() {
   args=$(git rev-parse --sq "$@")
   eval "git diff-tree -r $args" | {
