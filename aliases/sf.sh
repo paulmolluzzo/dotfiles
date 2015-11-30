@@ -10,6 +10,24 @@ gtix() {
   git log $original..$compare | grep -o "\(\#[0-9]\{4\}\)\|\([0-9]\{4\}\:\)\|\(\s\{4\}[0-9]\{4\}\)" | sort | uniq
 }
 
+# hardcode runtime messages for a specific language: sflang [lang_code]
+sflang() {
+  if [ -z "$1" ]; then
+      echo "You need to enter a language code"
+  else
+    runtime="protected/runtime/messages/${1}/app.php"
+    messages="protected/messages/${1}/app.php"
+
+    if [ -e "$runtime" ]; then
+      cp $runtime $messages
+      echo -e "$IGreen Updated $messages:$Color_Off"
+      git diff --stat
+    else
+      echo -e "$On_IBlue There are no runtime messages for ${1}$Color_Off"
+    fi
+  fi
+}
+
 # migrate
 alias m="protected/yiic migrate"
 
