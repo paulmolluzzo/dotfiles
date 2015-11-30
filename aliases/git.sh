@@ -24,8 +24,6 @@ alias gcmsg='git commit -m'
 alias gcamsg='git commit -am'
 # git push
 alias gp='git push'
-# git push set upstream origin
-alias gpsuo='git push --set-upstream origin'
 # git pull
 alias gl='git pull'
 # git status
@@ -145,4 +143,10 @@ gfsd() {
     done
     echo total $total
   }
+}
+
+# git push set upstream origin with current branch name
+gpsu() {
+  current=`git branch | grep \* | sed s/\*\ //`
+  git push --set-upstream origin $current
 }
