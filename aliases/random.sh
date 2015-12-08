@@ -82,3 +82,8 @@ get_callables() {
         | sed 's/alias \([^= ]*\)=.*/\1/' \
         | sed -E 's/(function )?([a-zA-Z0-9]*)\(\).*/\2/'
 }
+
+# binding to return to vim quickly
+stty susp undef
+bind '"\C-z":"fg\015"'
+
