@@ -32,27 +32,27 @@ cdf() {
 # The following is stolen from the awesome desk project: https://github.com/jamesob/desk
 # Use that repo not this stuff...
 
-# list aliases by type: lma git
+# list aliases by type. e.g.: lma git
 lma() {
     if [ $# -eq 0 ]; then
         echo "No alias type supplied"
         return
     fi
 
-    local FILES="${HOME}/dotfiles/aliases/$1.sh"
-    if [ -z "$FILES" ]; then
+    local FILE="${HOME}/dotfiles/aliases/$1.sh"
+    if [ -z "$FILE" ]; then
         echo "No aliases at $1.sh" 
         exit 2
     else
-        echo_description "$FILES"
-        local CALLABLES=$(get_callables "$FILES")
+        echo_description "$FILE"
+        local CALLABLES=$(get_callables "$FILE")
 
         # [ -z "$CALLABLES" ] || echo ""
 
         for NAME in $CALLABLES; do
             local DOCLINE=$(
                 grep -B 1 -E \
-                    "^(alias ${NAME}=|(function )?${NAME}\()" "$FILES" \
+                    "^(alias ${NAME}=|(function )?${NAME}\()" "$FILE" \
                     | grep "#")
 
             if [ -z "$DOCLINE" ]; then
@@ -65,7 +65,7 @@ lma() {
     fi
 }
 
-# FOR LMA FN. Echo the description of a desk. $1 is the deskfile.
+# FOR LMA FN. Echo the description of a alias sh file. $1 is the filename.
 echo_description() {
     local descline=$(grep -E "#\s+Description" "$1")
     if [ -n "$descline" ]; then
@@ -77,8 +77,8 @@ echo_description() {
 
 # FOR LMA FN. Return a list of aliases and functions for a given desk
 get_callables() {
-    local DESKPATH=$1
-    grep -E "^(alias |(function )?[a-zA-Z0-9_]+\()" "$DESKPATH" \
+    local ALIASPATH=$1
+    grep -E "^(alias |(function )?[a-zA-Z0-9_]+\()" "$ALIASPATH" \
         | sed 's/alias \([^= ]*\)=.*/\1/' \
         | sed -E 's/(function )?([a-zA-Z0-9]*)\(\).*/\2/'
 }
