@@ -35,14 +35,21 @@ cdf() {
 # list aliases by type. e.g.: lma git
 lma() {
     if [ $# -eq 0 ]; then
-        echo "No alias type supplied"
-        return
+        echo -e "$Blue"
+        echo -e "Your options are: $Color_Off"
+        ls -1 ${HOME}/dotfiles/aliases/ | while read line; do echo " lma $line"; done | sed -e 's/\.sh//g'
+return
     fi
 
     local FILE="${HOME}/dotfiles/aliases/$1.sh"
-    if [ -z "$FILE" ]; then
-        echo "No aliases at $1.sh" 
-        exit 2
+    if [ ! -f "$FILE" ]; then
+        echo -e "$Blue"
+        echo -e "Your options are: $Color_Off"
+        ls -1 ${HOME}/dotfiles/aliases/ | while read line; do echo " lma $line"; done | sed -e 's/\.sh//g'
+        return
+    elif [ -z "$FILE" ]; then
+        echo -e "$Red ⓧ  No aliases in $FILE$Color_Off" 
+        return
     else
         echo_description "$FILE"
         local CALLABLES=$(get_callables "$FILE")
