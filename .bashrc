@@ -59,3 +59,9 @@ source ${HOME}/dotfiles/aliases/random.sh
 ################################
 
 source ${HOME}/dotfiles/aliases/sf.sh
+
+################################
+########### Meteor #############
+################################
+
+source ${HOME}/dotfiles/aliases/meteor.sh
