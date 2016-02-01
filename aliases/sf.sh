@@ -7,7 +7,7 @@ gtix() {
   original=${1-master}
   current=`git branch | grep \* | sed s/\*\ //`
   compare=${2-$current}
-  git log $original..$compare | grep -o "\(\#[0-9]\{4\}\)\|\([0-9]\{4\}\:\)\|\(\s\{4\}[0-9]\{4\}\)" | sort | uniq
+  git log --pretty=oneline $original..$compare | cut -b 42- | grep -v '^Merge' | grep -v '^Revert' | perl -lne "/([0-9]{4})/ && print $&" | sort | uniq
 }
 
 # hardcode runtime messages for a specific language: sflang [lang_code]
