@@ -12,6 +12,15 @@ shopt -s histappend
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
 
+# Avoid duplicate entries
+HISTCONTROL="erasedups:ignoreboth"
+
+# Don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
+
+# Useful timestamp format
+HISTTIMEFORMAT='%F %T '
+
 ################################
 ############ Path ##############
 ################################
@@ -65,3 +74,10 @@ source ${HOME}/dotfiles/aliases/sf.sh
 ################################
 
 source ${HOME}/dotfiles/aliases/meteor.sh
+
+################################
+############# NVM ##############
+################################
+
+export NVM_DIR=~/.nvm
+source ~/.nvm/nvm.sh
