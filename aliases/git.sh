@@ -150,3 +150,16 @@ gpsu() {
   current=`git branch | grep \* | sed s/\*\ //`
   git push --set-upstream origin $current
 }
+
+# checkout a pull request by ID into a new branch like: gcopr 123 new-branch-name
+gcopr() {
+  numRegex='^[0-9]+$'
+  if ! [[ $1 =~ $numRegex ]]; then
+   echo "No ID for PR given"
+  elif [ -z "$2" ]; then
+    echo "No new branch given"
+  else
+    git fetch origin pull/$1/head:$2
+    git checkout $2
+  fi
+}
