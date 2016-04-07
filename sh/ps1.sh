@@ -15,8 +15,8 @@ if [ $? -eq 0 ]; then \
   else \
     # @5 - Changes to working tree
     echo "'$Prompt_IRed'"$(__git_ps1 " (%s)")'$Prompt_Color_Off'; \
-  fi) '$Prompt_White'\$'$Prompt_Color_Off' "; \
+  fi) '$Prompt_White'\n\$'$Prompt_Color_Off' "; \
 else \
   # @2 - Prompt when not in GIT repo
-  echo "'$Prompt_White' \$ '$Prompt_Color_Off'"; \
+  echo "'$Prompt_White' \n\$ '$Prompt_Color_Off'"; \
 fi)'
