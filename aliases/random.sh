@@ -2,6 +2,12 @@
 
 # Description: random aliases
 
+# list files
+alias ll='ls -l'
+
+# list all files
+alias lal='ls -al'
+
 # open files
 alias o='open'
 
