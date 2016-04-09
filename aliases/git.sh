@@ -60,6 +60,12 @@ alias gcom='git checkout master'
 alias gcl='git clone'
 # git fetch
 alias gf='git fetch'
+# git tag
+alias gt='git tag'
+# git tag -a [enter_tag]
+alias gta='git tag -a'
+# git push tags
+alias gpt='git push --tags'
 
 ################################
 ######### Functions ############
