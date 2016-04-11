@@ -2,11 +2,14 @@
 
 # Description: random aliases
 
-# list files
+# override ls
+alias ls='ls -hG'
+
+# list files columns
 alias ll='ls -l'
 
 # list all files
-alias lal='ls -al'
+alias lal='ls -Al'
 
 # open files
 alias o='open'
