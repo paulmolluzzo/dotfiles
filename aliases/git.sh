@@ -36,6 +36,8 @@ alias glg='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d
 alias ga='git add'
 # git merge
 alias gm='git merge'
+# git reset
+alias gr='git reset'
 # git reset HEAD
 alias grh='git reset HEAD'
 # git reset HEAD hard
