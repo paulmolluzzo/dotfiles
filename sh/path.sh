@@ -4,7 +4,7 @@
 export PATH=/usr/local/bin:$PATH
 
 # Add path for MAMP version of php
-export MAMP_PHP="/Applications/MAMP/bin/php/php5.5.3/bin"
+export MAMP_PHP="/Applications/MAMP/bin/php/php5.6.10/bin"
 export MAMP_MYSQL="/Applications/MAMP/Library/bin"
 
 export PATH="$MAMP_PHP:$PATH"
