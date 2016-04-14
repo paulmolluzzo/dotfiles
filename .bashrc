@@ -1,3 +1,5 @@
+
+
 ################################
 ########### Editor #############
 ################################
@@ -79,5 +81,27 @@ source ${HOME}/dotfiles/aliases/meteor.sh
 ############# NVM ##############
 ################################
 
-export NVM_DIR=~/.nvm
-source ~/.nvm/nvm.sh
+if [ -d ~/.nvm ] ; then
+  export NVM_DIR=~/.nvm
+fi
+if [ -f ~/.nvm/nvm.sh ] ; then
+  source ~/.nvm/nvm.sh
+fi
+
+################################
+############ Drush #############
+################################
+
+if [ -f ~/.drush/drush.bashrc ] ; then
+  source ~/.drush/drush.bashrc
+fi
+
+# Include Drush completion.
+if [ -f ~/.drush/drush.complete.sh ] ; then
+  source ~/.drush/drush.complete.sh
+fi
+
+################################
+########### Travis #############
+################################
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
