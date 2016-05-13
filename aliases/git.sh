@@ -164,10 +164,9 @@ gcopr() {
   numRegex='^[0-9]+$'
   if ! [[ $1 =~ $numRegex ]]; then
    echo "No ID for PR given"
-  elif [ -z "$2" ]; then
-    echo "No new branch given"
   else
-    git fetch origin pull/$1/head:$2
-    git checkout $2
+    branchname=${2-pr-$1}
+    git fetch origin pull/$1/head:$branchname
+    git checkout $branchname
   fi
 }
