@@ -78,6 +78,12 @@ source ${HOME}/dotfiles/aliases/sf.sh
 source ${HOME}/dotfiles/aliases/meteor.sh
 
 ################################
+############ Node ##############
+################################
+
+source ${HOME}/dotfiles/aliases/node.sh
+
+################################
 ############# NVM ##############
 ################################
 
