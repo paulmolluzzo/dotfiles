@@ -1,11 +1,18 @@
 #!/bin/bash
 
+# svn status
 alias sst='svn status'
+# svn update
 alias sup='svn update'
+# svn add
 alias sadd='svn add'
+# svn di
 alias sd='svn di'
+# svn merge
 alias sm='svn merge'
+# svn commit -m
 alias scmsg='svn commit -m'
+# svn log -l
 alias slog='svn log -l'
 
 # even better personal svn logging

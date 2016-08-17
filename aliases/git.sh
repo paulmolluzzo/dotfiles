@@ -16,8 +16,16 @@ alias gbd='git branch -d'
 alias gbvv='git branch -vv'
 # git diff
 alias gd='git diff'
+# git diff cached
+alias gdc='git diff --cached'
 # git diff name only
 alias gdno="git diff --name-only"
+# git commit
+alias gc='git commit'
+# git commit no edit
+alias gcne='git commit --no-edit'
+# git commit --amend --no-edit
+alias gcan='git commit --amend --no-edit'
 # git commit with message
 alias gcmsg='git commit -m'
 # git commit all with message
@@ -36,6 +44,8 @@ alias glg='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d
 alias ga='git add'
 # git merge
 alias gm='git merge'
+# git merge no editing
+alias gmne='git merge --no-edit'
 # git reset
 alias gr='git reset'
 # git reset HEAD

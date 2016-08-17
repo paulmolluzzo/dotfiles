@@ -17,6 +17,8 @@ alias o='open'
 # disk space of directories
 alias duh='du -h -d 1'
 
+# power cycle wifi
+alias wtf='networksetup -setairportpower en0 off; networksetup -setairportpower en0 on'
 
 # Print a horizontal rule
 rule () {
