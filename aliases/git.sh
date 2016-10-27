@@ -101,6 +101,16 @@ function gahead() {
   echo -e "$Green+$Color_Off $compare is currently $IGreen${numbers[1]}$Color_Off commits ahead of $original";
 }
 
+# git stash apply buy number: gstu 3
+function gstu() {
+  numRegex='^[0-9]+$'
+  if ! [[ $1 =~ $numRegex ]]; then
+   echo "No number provided"
+  else
+    git stash apply stash@{$1}
+  fi
+}
+
 # get ticket numbers only in a current branch
 
 # function gtix() {
