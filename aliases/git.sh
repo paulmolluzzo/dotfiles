@@ -117,7 +117,7 @@ function gahead() {
 
 # prettier git diff highlight
 gdhl() {
-  git diff -p --color $1 | ~/.bin/diff-highlight | strip_diff_leading_symbols | less -r
+  git diff -p --color $1 | ~/.bin/diff-highlight | strip_diff_leading_symbols | less -r -x1,4
 }
 
 # strip functionality for pretty git diff
