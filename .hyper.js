@@ -44,7 +44,7 @@ module.exports = {
     // custom css to embed in the terminal window
     termCSS: `
     x-screen a {
-      color: #ff2e88;
+      color: #00ccff;
     }
 
     x-screen a.hover {
