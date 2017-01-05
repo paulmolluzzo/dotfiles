@@ -59,7 +59,7 @@ module.exports = {
     // an array here instead of a color map object
     colors: {
       black: '#777777',
-      red: '#ff6541',
+      red: '#c7735f',
       green: '#fbb036',
       yellow: '#f2f200',
       blue: '#5796ed',
@@ -67,7 +67,7 @@ module.exports = {
       cyan: '#00ccff',
       white: '#f8f8f2',
       lightBlack: '#aaa',
-      lightRed: '#c7735f',
+      lightRed: '#cf8775',
       lightGreen: '#fbce81',
       lightYellow: '#ffffa7',
       lightBlue: '#9dc3f4',
