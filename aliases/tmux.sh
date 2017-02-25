@@ -9,7 +9,7 @@ alias tmn='TERM=screen-256color-bce tmux new -s'
 # tmux attach -t
 alias tma='TERM=screen-256color-bce tmux attach -t'
 # tmux ls
-alias tml='tmux ls'
+alias tmls='tmux ls'
 # tmux kill-session -t
 alias tmk='tmux kill-session -t'
 # killall tmux
