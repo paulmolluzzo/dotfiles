@@ -3,7 +3,7 @@
 "
 " GitHub project: https://github.com/raphamorim/lucario
 
-set background=dark
+" set background=dark
 highlight clear SignColumn
 
 set t_Co=256
