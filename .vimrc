@@ -85,7 +85,7 @@ set hidden
 set noshowmode
 autocmd BufLeave,FocusLost * silent! wall
 noremap <Leader>s :update<CR>
-noremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+noremap <Leader>r :%s/<C-r><C-w>//g<Left><Left>
 map q: :q
 vmap <Leader>y "+y
 vmap <Leader>d "+d
