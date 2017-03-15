@@ -23,6 +23,9 @@ export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
 # Useful timestamp format
 HISTTIMEFORMAT='%F %T '
 
+# pass through ctrl-s for vim
+stty -ixon
+
 ################################
 ############ Path ##############
 ################################

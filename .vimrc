@@ -76,15 +76,16 @@ set visualbell
 set autoread
 set showmode
 set backspace=2
-set autoread
 set autowrite
 set nobackup
 set noswapfile
 set undolevels=1000
-set hidden
+set nohidden
 set noshowmode
 autocmd BufLeave,FocusLost * silent! wall
-noremap <Leader>s :update<CR>
+noremap <silent> <C-s> :update<CR>
+vnoremap <silent> <C-s> <C-c>:update<CR>
+inoremap <silent> <C-s> <C-o>:update<CR>
 noremap <Leader>r :%s/<C-r><C-w>//g<Left><Left>
 map q: :q
 vmap <Leader>y "+y
