@@ -17,3 +17,6 @@ alias tmka='killall tmux'
 
 # Completion for tmuxinator
 source ~/.bin/tmuxinator.bash
+
+## alias for tmuxinator
+alias mux='tmuxinator'
