@@ -9,6 +9,8 @@ source ${HOME}/.profile
 ################################
 
 # list all branches
+alias gb='git branch'
+# list all branches
 alias gba='git branch -a'
 # delete branch
 alias gbd='git branch -d'

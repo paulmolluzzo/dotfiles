@@ -1313,6 +1313,39 @@ esac
 COMPREPLY=()
 }
 
+_git_delete_branch ()
+{
+
+local i c=1 only_local_ref="n" has_r="n" cur words cword
+
+_get_comp_words_by_ref -n =: cur words cword
+while [ $c -lt $cword ]; do
+i="${words[c]}"
+case "$i" in
+-d|-m) only_local_ref="y" ;;
+-r) has_r="y" ;;
+esac
+c=$((++c))
+done
+
+case "$cur" in
+--*)
+__gitcomp "
+--color --no-color --verbose --abbrev= --no-abbrev
+--track --no-track --contains --merged --no-merged
+--set-upstream
+"
+;;
+*)
+if [ $only_local_ref = "y" -a $has_r = "n" ]; then
+__gitcomp "$(__git_heads)"
+else
+__gitcomp "$(__git_refs)"
+fi
+;;
+esac
+}
+
 _git_describe ()
 {
 local cur
@@ -2793,6 +2826,10 @@ complete -o bashdefault -o default -o nospace -F _git_checkout gco 2>/dev/null \
 || complete -o default -o nospace -F _git_checkout gco
 complete -o bashdefault -o default -o nospace -F _git_merge gm 2>/dev/null \
 || complete -o default -o nospace -F _git_checkout gm
+complete -o bashdefault -o default -o nospace -F _git_branch gb 2>/dev/null \
+|| complete -o default -o nospace -F _git_branch gb
+complete -o bashdefault -o default -o nospace -F _git_delete_branch gbd 2>/dev/null \
+|| complete -o default -o nospace -F _git_delete_branch gbd
 
 # The following are necessary only for Cygwin, and only are needed
 # when the user has tab-completed the executable name and consequently
