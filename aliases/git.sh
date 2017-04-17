@@ -74,12 +74,19 @@ alias gcom='git checkout master'
 alias gcl='git clone'
 # git fetch
 alias gf='git fetch'
+# git fetch upstream
+alias gfu='git fetch upstream'
 # git tag
 alias gt='git tag'
 # git tag -a [enter_tag]
 alias gta='git tag -a'
 # git push tags
 alias gpt='git push --tags'
+# git rebase
+alias grb="git rebase"
+# git rebase upstream/master
+alias grbum="git rebase upstream/master"
+
 
 ################################
 ######### Functions ############
