@@ -76,6 +76,8 @@ Prompt_On_IPurple="\[\033[10;95m\]"  # Purple
 Prompt_On_ICyan="\[\033[0;106m\]"    # Cyan
 Prompt_On_IWhite="\[\033[0;107m\]"   # White
 
+Prompt_Italic="\[\033[38m"   # White
+
 # For non-prompt use
 # Reset
 Color_Off="\033[0m"       # Text Reset
