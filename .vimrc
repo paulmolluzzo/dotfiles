@@ -153,3 +153,7 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" hack for fixing airline in vim for hyper
+" see https://github.com/zeit/hyper/issues/1037#issuecomment-269848444
+set t_RV=
