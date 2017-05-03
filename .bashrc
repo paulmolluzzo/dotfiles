@@ -18,7 +18,7 @@ export HISTSIZE=1000000
 HISTCONTROL="erasedups:ignoreboth"
 
 # Don't record some commands
-export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:hh:ll:lal"
 
 # Useful timestamp format
 HISTTIMEFORMAT='%F %T '
