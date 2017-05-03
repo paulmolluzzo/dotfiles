@@ -12,3 +12,7 @@ alias nr="npm run"
 alias ns="npm start"
 # npm test
 alias nt="npm test"
+
+# npm-list-scripts
+# see https://github.com/vrunoa/npm-list-scripts
+alias nls="npm-list-scripts"
