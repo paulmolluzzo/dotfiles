@@ -7,11 +7,11 @@ alias nid="npm install --save-dev"
 # npm install --save
 alias nis="npm install --save"
 # npm run
-alias nr="npm run"
+alias nr="npm run --silent"
 # npm start
-alias ns="npm start"
+alias ns="npm start --silent"
 # npm test
-alias nt="npm test"
+alias nt="npm test --silent"
 
 # npm-list-scripts
 # see https://github.com/vrunoa/npm-list-scripts
