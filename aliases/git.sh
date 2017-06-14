@@ -199,3 +199,11 @@ gcopr() {
     git checkout $branchname
   fi
 }
+
+# update existing tag to point to current commit
+updatetag() {
+  git tag -d $1
+  git push origin :$1
+  git tag $1
+  git push origin $1
+}
