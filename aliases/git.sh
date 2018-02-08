@@ -86,6 +86,8 @@ alias gpt='git push --tags'
 alias grb="git rebase"
 # git rebase upstream/master
 alias grbum="git rebase upstream/master"
+# git submodule update --init
+alias gsui="git submodule update --init"
 
 
 ################################
@@ -198,4 +200,12 @@ gcopr() {
     git fetch origin pull/$1/head:$branchname
     git checkout $branchname
   fi
+}
+
+# update existing tag to point to current commit
+updatetag() {
+  git tag -d $1
+  git push origin :$1
+  git tag $1
+  git push origin $1
 }
