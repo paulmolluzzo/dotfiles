@@ -44,6 +44,8 @@ alias gss='git status -s'
 alias glg='git log --color --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset" --abbrev-commit'
 # git add
 alias ga='git add'
+# git add --patch
+alias gap='git add . -p'
 # git merge
 alias gm='git merge'
 # git merge no editing
