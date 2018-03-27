@@ -11,3 +11,4 @@ doc/
 .gitconfig.private
 .vim/bundle/ctrlp.vim
 .vim/.netrwhist
+aliases/private.sh

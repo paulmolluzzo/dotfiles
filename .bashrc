@@ -87,6 +87,14 @@ source ${HOME}/dotfiles/aliases/meteor.sh
 source ${HOME}/dotfiles/aliases/node.sh
 
 ################################
+########### Private ############
+################################
+
+if [ -f ${HOME}/dotfiles/aliases/private.sh ] ; then
+  source ${HOME}/dotfiles/aliases/private.sh
+fi
+
+################################
 ############# NVM ##############
 ################################
 
