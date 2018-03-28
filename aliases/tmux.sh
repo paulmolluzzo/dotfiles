@@ -16,7 +16,9 @@ alias tmk='tmux kill-session -t'
 alias tmka='killall tmux'
 
 # Completion for tmuxinator
-source ~/.bin/tmuxinator.bash
+if [ -f ~/.bin/tmuxinator.bash ] ; then
+  source ~/.bin/tmuxinator.bash
+fi
 
 ## alias for tmuxinator
 alias mux='tmuxinator'
