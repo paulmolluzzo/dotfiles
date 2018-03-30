@@ -12,7 +12,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 execute pathogen#infect()
 
 " GitGutter settings
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 let g:gitgutter_realtime = 750
 let g:gitgutter_eager = 750
 let g:gitgutter_map_keys=0
