@@ -86,10 +86,14 @@ alias gta='git tag -a'
 alias gpt='git push --tags'
 # git rebase
 alias grb="git rebase"
+# git rebase --continue
+alias grbc="grb --continue"
 # git rebase upstream/master
 alias grbum="git rebase upstream/master"
 # git submodule update --init
 alias gsui="git submodule update --init"
+# git fetch origin master:master
+alias gum="git fetch origin master:master"
 
 
 ################################
