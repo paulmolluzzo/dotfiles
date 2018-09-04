@@ -90,6 +90,12 @@ source ${HOME}/dotfiles/aliases/meteor.sh
 source ${HOME}/dotfiles/aliases/node.sh
 
 ################################
+####### npm completion #########
+################################
+
+source ${HOME}/dotfiles/npm-completion.sh
+
+################################
 ########### Private ############
 ################################
 
