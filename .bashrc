@@ -23,9 +23,6 @@ export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:hh:ll:lal"
 # Useful timestamp format
 HISTTIMEFORMAT='%F %T '
 
-# update history on every command
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-
 # pass through ctrl-s for vim
 stty -ixon
 

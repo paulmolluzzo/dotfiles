@@ -20,6 +20,9 @@ alias duh='du -h -d 1'
 # power cycle wifi
 alias wtf='networksetup -setairportpower en0 off; networksetup -setairportpower en0 on'
 
+# reset bash profile - source ~/.bash_profile
+alias rebash='source ~/.bash_profile'
+
 # Print a horizontal rule
 rule () {
         printf "%$(tput cols)s\n"|tr " " "─"

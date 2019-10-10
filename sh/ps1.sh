@@ -20,3 +20,6 @@ else \
   # @2 - Prompt when not in GIT repo
   echo "'$Prompt_White' $ '$Prompt_Color_Off'"; \
 fi)'
+
+# simple PS1
+# export PS1=$Prompt_BYellow'['$PathShort']'$Prompt_White' $ '$Prompt_Color_Off

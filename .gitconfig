@@ -32,6 +32,7 @@
     editor = vim 
     excludesfile = ~/.gitignore
     pager = less -x1,5
+	ignorecase = false
 [credential]
     helper = osxkeychain
 [push]

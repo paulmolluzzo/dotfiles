@@ -12,6 +12,8 @@ alias nr="npm run --silent"
 alias ns="npm start --silent"
 # npm test
 alias nt="npm test --silent"
+# npm run prepublishOnly
+alias nrppo="npm run prepublishOnly"
 
 # npm-list-scripts
 # see https://github.com/vrunoa/npm-list-scripts
