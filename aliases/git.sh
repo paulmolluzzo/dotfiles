@@ -100,6 +100,12 @@ alias gum="git fetch origin master:master"
 ######### Functions ############
 ################################
 
+# git update branch without switching to it: gup [branch-name]
+function gup() {
+  branch=${1-master}
+  git fetch origin $branch:$branch
+}
+
 # git branch ahead/behind another: gahead $left $right
 function gahead() {
   # use first argument or master
