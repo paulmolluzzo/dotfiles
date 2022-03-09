@@ -26,7 +26,12 @@ set completion-ignore-case On
 # Heroku Toolbelt
 # export PATH="/usr/local/heroku/bin:$PATH"
 
+export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="/usr/local/opt/mongodb@3.6/bin:$PATH"
 
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.9
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

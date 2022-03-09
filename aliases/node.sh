@@ -7,11 +7,11 @@ alias nid="npm install --save-dev"
 # npm install --save
 alias nis="npm install --save"
 # npm run
-alias nr="npm run --silent"
+alias nr="npm run"
 # npm start
-alias ns="npm start --silent"
+alias ns="npm start"
 # npm test
-alias nt="npm test --silent"
+alias nt="npm test"
 # npm run prepublishOnly
 alias nrppo="npm run prepublishOnly"
 

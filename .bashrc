@@ -20,6 +20,9 @@ HISTCONTROL="erasedups:ignoreboth"
 # Don't record some commands
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:hh:ll:lal"
 
+# shut apple up
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # Useful timestamp format
 HISTTIMEFORMAT='%F %T '
 
@@ -134,3 +137,7 @@ fi
 ################################
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# jenv something
+eval "$(jenv init -)"
