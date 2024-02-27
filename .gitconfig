@@ -29,7 +29,7 @@
     reb = "!r() { git rebase -i HEAD~$1; }; r"
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
-    editor = vim 
+	editor = code --wait
     excludesfile = ~/.gitignore
     pager = less -x1,5
 	ignorecase = false
@@ -48,3 +48,6 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[user]
+	name = Paul Molluzzo
+	email = paul.molluzzo@disneystreaming.com

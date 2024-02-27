@@ -14,7 +14,7 @@ export PATH=/usr/local/bin:$PATH
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # MacPorts Installer addition on 2012-09-20_at_11:02:19: adding an appropriate PATH variable for use with MacPorts.
-# export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # Add RVM to PATH for scripting
 # PATH=$PATH:$HOME/.rvm/bin 
@@ -26,12 +26,6 @@ set completion-ignore-case On
 # Heroku Toolbelt
 # export PATH="/usr/local/heroku/bin:$PATH"
 
-export PATH="$HOME/.jenv/bin:$PATH"
-export PATH="/usr/local/opt/mongodb@3.6/bin:$PATH"
-
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.9
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# pnpm
+export PNPM_HOME="/Users/paul.molluzzo/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"

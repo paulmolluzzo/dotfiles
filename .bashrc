@@ -136,8 +136,11 @@ fi
 ########## Autojump ############
 ################################
 
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && source /opt/homebrew/etc/profile.d/autojump.sh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# jenv something
-eval "$(jenv init -)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# pnpm
+export PNPM_HOME="/Users/paul.molluzzo/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
