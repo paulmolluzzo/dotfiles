@@ -27,5 +27,8 @@ set completion-ignore-case On
 # export PATH="/usr/local/heroku/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="/Users/paul.molluzzo/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+# export PNPM_HOME="/Users/paul.molluzzo/Library/pnpm"
+# export PATH="$PNPM_HOME:$PATH"
+
+# Obsidian
+export PATH="$PATH:/Applications/Obsidian.app/Contents/MacOS"

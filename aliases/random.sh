@@ -118,7 +118,7 @@ colors() {
     echo -e ""
 }
 
-# binding to return to vim quickly
-stty susp undef
-bind '"\C-z":"fg\015"'
+# binding to return to vim quickly (only if stdin is a terminal)
+[ -t 0 ] && stty susp undef
+[ -t 0 ] && bind '"\C-z":"fg\015"'
 

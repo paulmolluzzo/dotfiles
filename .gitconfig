@@ -30,7 +30,7 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
 	editor = code --wait
-    excludesfile = ~/.gitignore
+	excludesfile = /Users/paul.molluzzo/.gitignore_global
     pager = less -x1,5
 	ignorecase = false
 [credential]
@@ -50,4 +50,4 @@
 	prompt = false
 [user]
 	name = Paul Molluzzo
-	email = paul.molluzzo@disneystreaming.com
+	email = paul.molluzzo@disney.com
