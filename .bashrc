@@ -1,4 +1,5 @@
-
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash"
 
 ################################
 ########### Editor #############
@@ -26,8 +27,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 # Useful timestamp format
 HISTTIMEFORMAT='%F %T '
 
-# pass through ctrl-s for vim
-stty -ixon
+# pass through ctrl-s for vim (only if stdin is a terminal)
+[ -t 0 ] && stty -ixon
 
 ################################
 ############ Path ##############
@@ -90,6 +91,12 @@ source ${HOME}/dotfiles/aliases/meteor.sh
 source ${HOME}/dotfiles/aliases/node.sh
 
 ################################
+########### amazon q ###########
+################################
+
+source ${HOME}/dotfiles/aliases/amazonq.sh
+
+################################
 ####### npm completion #########
 ################################
 
@@ -106,13 +113,8 @@ fi
 ################################
 ############# NVM ##############
 ################################
-
-if [ -d ~/.nvm ] ; then
-  export NVM_DIR=~/.nvm
-fi
-if [ -f ~/.nvm/nvm.sh ] ; then
-  source ~/.nvm/nvm.sh
-fi
+# REMOVED: NVM lazy-loading is now handled in .bash_profile
+# This section was causing duplicate loading and 3+ second delay
 
 ################################
 ############ Drush #############
@@ -137,10 +139,42 @@ fi
 ################################
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && source /opt/homebrew/etc/profile.d/autojump.sh
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+################################
+########### Homebrew ###########
+################################
+# Use cached brew shellenv to save ~280ms
+if [ -f ~/.brew-shellenv-cache ]; then
+  source ~/.brew-shellenv-cache
+else
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  # Create cache file
+  /opt/homebrew/bin/brew shellenv > ~/.brew-shellenv-cache
+fi
+
 # pnpm
-export PNPM_HOME="/Users/paul.molluzzo/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+# export PNPM_HOME="/Users/paul.molluzzo/Library/pnpm"
+# export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
+################################
+########### Maven/Java #########
+################################
+# Maven stuff for ESPN Score (Homebrew installation)
+export M2_HOME=/opt/homebrew/Cellar/maven/3.9.11/libexec
+export MAVEN_HOME=$M2_HOME
+export PATH=$PATH:$M2_HOME/bin
+
+# Lazy Java home - only set when needed
+if command -v java &> /dev/null; then
+  export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0 2>/dev/null || echo "")
+fi
+
+# Amazon Q post block. Keep at the bottom of this file.
+#
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash"
