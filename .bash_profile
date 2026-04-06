@@ -12,7 +12,6 @@ export PATH=$KEPLER_SDK_PATH/bin/tools:$PATH
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash"
-
 ################################
 ############# NVM ##############
 ################################

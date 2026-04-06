@@ -173,8 +173,6 @@ if command -v java &> /dev/null; then
   export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0 2>/dev/null || echo "")
 fi
 
-# Amazon Q post block. Keep at the bottom of this file.
-#
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash"
