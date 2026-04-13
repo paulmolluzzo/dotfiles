@@ -2,7 +2,6 @@
 
 # Git tab completion
 source ${HOME}/.git-completion.bash
-source ${HOME}/.profile
 
 ################################
 ######### Aliases ##############

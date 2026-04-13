@@ -1,5 +1,5 @@
 # Kiro CLI pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash"
+# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash"
 
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
@@ -11,7 +11,7 @@ export PATH=$KEPLER_SDK_PATH/bin:$PATH
 export PATH=$KEPLER_SDK_PATH/bin/tools:$PATH
 
 # Kiro CLI post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash"
+# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash"
 ################################
 ############# NVM ##############
 ################################
@@ -20,6 +20,9 @@ export PATH=$KEPLER_SDK_PATH/bin/tools:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.local/bin:$PATH"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Lazy-loading function
 _nvm_lazy_load() {
@@ -31,10 +34,10 @@ _nvm_lazy_load() {
 }
 
 # Create placeholder functions that trigger lazy loading
-node() { _nvm_lazy_load; node "$@"; }
-npm() { _nvm_lazy_load; npm "$@"; }
-npx() { _nvm_lazy_load; npx "$@"; }
-nvm() { _nvm_lazy_load; nvm "$@"; }
+# node() { _nvm_lazy_load; node "$@"; }
+# npm() { _nvm_lazy_load; npm "$@"; }
+# npx() { _nvm_lazy_load; npx "$@"; }
+# nvm() { _nvm_lazy_load; nvm "$@"; }
 
 # But make node/npm available immediately in PATH if already installed
 if [ -d "$NVM_DIR/versions/node/v20.19.2" ]; then
