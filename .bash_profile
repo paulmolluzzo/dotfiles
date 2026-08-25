@@ -1,5 +1,3 @@
-# Kiro CLI pre block. Keep at the top of this file.
-# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.pre.bash"
 
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
@@ -10,8 +8,6 @@ export KEPLER_SDK_PATH=/Users/paul.molluzzo/kepler/sdk/0.20.3351
 export PATH=$KEPLER_SDK_PATH/bin:$PATH
 export PATH=$KEPLER_SDK_PATH/bin/tools:$PATH
 
-# Kiro CLI post block. Keep at the bottom of this file.
-# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bash_profile.post.bash"
 ################################
 ############# NVM ##############
 ################################

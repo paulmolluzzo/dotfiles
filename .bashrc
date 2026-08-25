@@ -1,5 +1,3 @@
-# Kiro CLI pre block. Keep at the top of this file.
-# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.pre.bash"
 
 ################################
 ########### Editor #############
@@ -94,7 +92,6 @@ source ${HOME}/dotfiles/aliases/node.sh
 ########### amazon q ###########
 ################################
 
-source ${HOME}/dotfiles/aliases/amazonq.sh
 
 ################################
 ####### npm completion #########
@@ -174,8 +171,6 @@ if command -v java &> /dev/null; then
 fi
 
 
-# Kiro CLI post block. Keep at the bottom of this file.
-# [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/bashrc.post.bash"
 
 # Added by pat-manager
 source /Users/paul.molluzzo/.nvm/versions/node/v20.19.2/lib/node_modules/@aiadvance/cli-universe/node_modules/@aiadvance/pat-manager/shell/pat-manager.bash
