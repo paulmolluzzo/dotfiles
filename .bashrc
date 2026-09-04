@@ -173,4 +173,4 @@ fi
 
 
 # Added by pat-manager
-source /Users/paul.molluzzo/.nvm/versions/node/v20.19.2/lib/node_modules/@aiadvance/cli-universe/node_modules/@aiadvance/pat-manager/shell/pat-manager.bash
+# source /Users/paul.molluzzo/.nvm/versions/node/v20.19.2/lib/node_modules/@aiadvance/cli-universe/node_modules/@aiadvance/pat-manager/shell/pat-manager.bash

@@ -44,8 +44,21 @@ fi
 ########## pat-manager #########
 ################################
 # Added by pat-manager
-source /Users/paul.molluzzo/pat-manager/shell/pat-manager.bash
+# source /Users/paul.molluzzo/pat-manager/shell/pat-manager.bash
 
 # Map pat-manager tokens to MCP server env vars
 export JIRA_PAT="${JIRA_TOKEN}"
 export CONFLUENCE_PAT="${CONFLUENCE_TOKEN}"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# aix shell completions
+[ -f /Users/paul.molluzzo/.aix/completions/aix.bash ] && source /Users/paul.molluzzo/.aix/completions/aix.bash
+
+# Added by aix setup
+export PATH="$HOME/.aix/bin:$PATH"
+
+# Claude Access CLI completion
+[[ -f ~/.claude-access/completions/claude-access.bash ]] && source ~/.claude-access/completions/claude-access.bash
