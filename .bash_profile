@@ -62,3 +62,8 @@ export PATH="$HOME/.aix/bin:$PATH"
 
 # Claude Access CLI completion
 [[ -f ~/.claude-access/completions/claude-access.bash ]] && source ~/.claude-access/completions/claude-access.bash
+
+# Use the arm64-only Homebrew bash. Universal /bin/bash and /bin/zsh get launched
+# as x86_64 (Rosetta) when spawned from arm64 processes like claude, so anything
+# claude runs would otherwise see uname -m = x86_64 and install x64 builds.
+[ -x /opt/homebrew/bin/bash ] && export SHELL=/opt/homebrew/bin/bash
